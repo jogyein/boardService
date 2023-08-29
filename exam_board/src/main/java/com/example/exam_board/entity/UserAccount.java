@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @AllArgsConstructor
@@ -16,7 +17,7 @@ import java.util.List;
 @Builder
 public class UserAccount extends AuditingFields{
     @Id
-    @Column(length = 50)
+    @Column(length = 100)
     @Setter
     private String userId;
 
