@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/security_test
+    url: jdbc:mysql://localhost:3306/exam_board
     username: 'root'
     password: '1234'
 
@@ -46,11 +46,10 @@ spring:
             authorization-grant-type: authorization_code
             client-name: Kakao
             scope:
-              -profile_nickname
-              -account_email
+              - profile_nickname
+              - account_email
 
         provider :
-
           naver :
             authorizationUri: https://nid.naver.com/oauth2.0/authorize
             tokenUri: https://nid.naver.com/oauth2.0/token
@@ -63,5 +62,12 @@ spring:
               user-info-uri: https://kapi.kakao.com/v2/user/me
               user_name_attribute: id
 
-
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+    show-sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
 
